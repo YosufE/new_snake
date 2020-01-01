@@ -1,9 +1,10 @@
-from modules import fenster, schlange
+from modules import fenster, schlange, essen
 import pygame
 
 clock = pygame.time.Clock()
 fenster = fenster.Fenster(600, 600)
 schlange = schlange.Schlange()
+essen = essen.Essen()
 
 
 laufendes_Spiel = True
@@ -19,7 +20,13 @@ while laufendes_Spiel:
             break  # um zu verhindern das man mehrere Tasten aufeinmal drueckt
 
     schlange.kopf.bewege()
+    schlange.koerper.aktualisiere_liste()
+
+    essen.zeichne(fenster.oberflaeche)
     schlange.zeichne(fenster.oberflaeche)
 
-    if schlange.kopf.kollidiert_mit_rand(fenster):
+    if schlange.kopf.kollidiert_mit_rand(fenster) or schlange.kopf.kollidiert_mit_koerper(schlange.koerper):
         laufendes_Spiel = False
+    if schlange.kopf.kollidiert_mit_essen(essen):
+        schlange.koerper.erweitere()
+        essen.neu()

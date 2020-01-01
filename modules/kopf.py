@@ -35,3 +35,11 @@ class Kopf(viereck.Viereck):
         if (self.x >= fenster.breite) or (self.x < 0) or (self.y >= fenster.hoehe) or (self.y < 0):
             return True
         return False
+
+    def kollidiert_mit_koerper(self, koerper):
+        pass
+
+    def kollidiert_mit_essen(self, essen):
+        if (self.x, self.y) == (essen.x, essen.y):
+            return True
+        return False

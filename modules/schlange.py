@@ -1,4 +1,4 @@
-from . import viereck, kopf
+from . import viereck, kopf, koerper
 
 
 class Schlange(viereck.Viereck):
@@ -6,6 +6,8 @@ class Schlange(viereck.Viereck):
         self.farbe = farbe
 
         self.kopf = kopf.Kopf()
+        self.koerper = koerper.Koerper(self.kopf)
 
     def zeichne(self, oberflaeche):
         self.kopf.zeichne(oberflaeche)
+        self.koerper.zeichne(oberflaeche)
