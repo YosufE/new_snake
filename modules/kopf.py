@@ -37,7 +37,9 @@ class Kopf(viereck.Viereck):
         return False
 
     def kollidiert_mit_koerper(self, koerper):
-        pass
+        if (self.x, self.y) in koerper.koerper_liste[:-1]:
+            return True
+        return False
 
     def kollidiert_mit_essen(self, essen):
         if (self.x, self.y) == (essen.x, essen.y):
