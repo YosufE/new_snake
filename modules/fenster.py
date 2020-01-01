@@ -12,3 +12,4 @@ class Fenster:
 
     def aktualisiere(self):
         pygame.display.flip()
+        self.oberflaeche.fill(self.farbe)
