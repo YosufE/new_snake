@@ -31,3 +31,7 @@ class Kopf(viereck.Viereck):
         elif self.richtung == "Unten":
             self.y += self.groesse
 
+    def kollidiert_mit_rand(self, fenster):
+        if (self.x >= fenster.breite) or (self.x < 0) or (self.y >= fenster.hoehe) or (self.y < 0):
+            return True
+        return False

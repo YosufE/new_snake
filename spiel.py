@@ -16,6 +16,10 @@ while laufendes_Spiel:
             laufendes_Spiel = False
         if event.type == pygame.KEYDOWN and event.key in [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]:
             schlange.kopf.aktualisiere_Richtung(event.key)
+            break  # um zu verhindern das man mehrere Tasten aufeinmal drueckt
 
-    schlange.zeichne(fenster.oberflaeche)
     schlange.kopf.bewege()
+    schlange.zeichne(fenster.oberflaeche)
+
+    if schlange.kopf.kollidiert_mit_rand(fenster):
+        laufendes_Spiel = False
