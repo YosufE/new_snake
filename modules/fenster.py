@@ -7,8 +7,8 @@ class Fenster:
         self.hoehe = hoehe
         self.farbe = farbe
 
-        # nimmt nur eine liste mit breite und höhe an
-        self.fenster = pygame.display.set_mode((breite, hoehe))
+        # Nimmt nur eine Liste mit Breite und Höhe an
+        self.oberflaeche = pygame.display.set_mode((breite, hoehe))
 
-    def aktualisieren(self):
+    def aktualisiere(self):
         pygame.display.flip()
