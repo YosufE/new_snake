@@ -14,4 +14,9 @@ class Schlange(viereck.Viereck):
     
     def bewege(self):
         self.kopf.bewege()
-        self.koerper.aktualisiere_liste()
+        self.kopf.aktualisiere_verlauf(self.koerper)
+
+    def kollidiert(self, fenster):
+        if self.kopf.kollidiert_mit_rand(fenster) or self.kopf.kollidiert_mit_koerper():
+            return True
+        return False

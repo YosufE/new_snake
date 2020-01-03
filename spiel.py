@@ -24,7 +24,7 @@ while laufendes_Spiel:
     essen.zeichne(fenster.oberflaeche)
     schlange.zeichne(fenster.oberflaeche)
 
-    if schlange.kopf.kollidiert_mit_rand(fenster) or schlange.kopf.kollidiert_mit_koerper(schlange.koerper):
+    if schlange.kollidiert(fenster):
         laufendes_Spiel = False
     if schlange.kopf.kollidiert_mit_essen(essen):
         schlange.koerper.erweitere()
