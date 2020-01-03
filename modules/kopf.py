@@ -37,7 +37,7 @@ class Kopf(viereck.Viereck):
         return False
 
     def kollidiert_mit_koerper(self, koerper):
-        if (self.x, self.y) in koerper.koerper_liste[:-1]:
+        if (self.x, self.y) in koerper.verlauf_koordinaten[:-1]:
             return True
         return False
 

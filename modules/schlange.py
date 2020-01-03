@@ -11,3 +11,7 @@ class Schlange(viereck.Viereck):
     def zeichne(self, oberflaeche):
         self.kopf.zeichne(oberflaeche)
         self.koerper.zeichne(oberflaeche)
+    
+    def bewege(self):
+        self.kopf.bewege()
+        self.koerper.aktualisiere_liste()

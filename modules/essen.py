@@ -12,6 +12,9 @@ class Essen(viereck.Viereck):
         self.x = random.choice(self.moegliche_koordinaten)
         self.y = random.choice(self.moegliche_koordinaten)
 
-    def neu(self):
-        self.x = random.choice(self.moegliche_koordinaten)
-        self.y = random.choice(self.moegliche_koordinaten)
+    def neu(self, schlange):
+        while (self.x, self.y) in schlange.koerper.verlauf_koordinaten:
+            self.x = random.choice(self.moegliche_koordinaten)
+            self.y = random.choice(self.moegliche_koordinaten)
+
+

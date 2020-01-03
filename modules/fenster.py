@@ -2,7 +2,7 @@ import pygame
 
 
 class Fenster:
-    def __init__(self, breite, hoehe, farbe=(0, 0, 0)):
+    def __init__(self, breite=600, hoehe=600, farbe=(0, 0, 0)):
         self.breite = breite
         self.hoehe = hoehe
         self.farbe = farbe
