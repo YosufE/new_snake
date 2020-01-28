@@ -21,8 +21,8 @@ while laufendes_Spiel:
 
     schlange.bewege()
 
-    essen.zeichne(fenster.oberflaeche)
     schlange.zeichne(fenster.oberflaeche)
+    essen.zeichne(fenster.oberflaeche)
 
     if schlange.kollidiert(fenster):
         laufendes_Spiel = False

@@ -3,14 +3,11 @@ from . import viereck
 
 
 class Kopf(viereck.Viereck):
-    def __init__(self, farbe=(255, 255, 255)):
-        self.x = 260
-        self.y = 260
-        self.groesse = 20
-        self.farbe = farbe
+    def __init__(self, farbe):
+        super().__init__(260, 260, 20, farbe)
 
         self.richtung = None
-        self.verlauf_koordinaten = [(self.x, self.y)]
+        self.verlauf_koordinaten = []
 
     def aktualisiere_Richtung(self, taste):
         if taste == pygame.K_LEFT and self.richtung != "Rechts":
@@ -33,11 +30,10 @@ class Kopf(viereck.Viereck):
             self.y += self.groesse
 
     def aktualisiere_verlauf(self, koerper):
-        # Um zu verhindern, dass mehr als ein mal die gleichen Koordinaten folgen
-        if self.verlauf_koordinaten[-1] != (self.x, self.y):
+        if self.richtung != None:
             self.verlauf_koordinaten.append((self.x, self.y))
-        # Behalte die Liste auf die Länge des Körpers + 1
-        self.verlauf_koordinaten = self.verlauf_koordinaten[-koerper.laenge - 1:]
+            # Behalte die Liste auf die Länge des Körpers + 1 um zu wissen wo nächstes viereck gezeichnet wird
+            self.verlauf_koordinaten = self.verlauf_koordinaten[-koerper.laenge-1:]
 
     def kollidiert_mit_rand(self, fenster):
         if (self.x >= fenster.breite) or (self.x < 0) or (self.y >= fenster.hoehe) or (self.y < 0):
@@ -45,7 +41,7 @@ class Kopf(viereck.Viereck):
         return False
 
     def kollidiert_mit_koerper(self):
-        if (self.x, self.y) in self.verlauf_koordinaten[:-1]:
+        if (self.x, self.y) in self.verlauf_koordinaten[1:]:
             return True
         return False
 

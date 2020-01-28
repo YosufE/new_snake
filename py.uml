@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#C:/Users/Pingu/Dropbox/new_snake/modules/viereck.py</OriginalElement>
+  <nodes>
+    <node x="83.25" y="554.0">modules.viereck.Viereck</node>
+    <node x="0.0" y="844.0">modules.essen.Essen</node>
+    <node x="235.0" y="778.0">modules.kopf.Kopf</node>
+    <node x="1003.25" y="554.0">modules.koerper.Koerper</node>
+    <node x="680.25" y="554.0">modules.fenster.Fenster</node>
+    <node x="563.25" y="0.0">object</node>
+    <node x="385.25" y="543.0">modules.schlange.Schlange</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="modules.essen.Essen" target="modules.viereck.Viereck">
+      <point x="0.0" y="-92.5" />
+      <point x="107.5" y="753.0" />
+      <point x="153.75" y="753.0" />
+      <point x="-70.5" y="81.5" />
+    </edge>
+    <edge source="modules.viereck.Viereck" target="object">
+      <point x="0.0" y="-81.5" />
+      <point x="224.25" y="513.0" />
+      <point x="591.75" y="513.0" />
+      <point x="-85.5" y="246.5" />
+    </edge>
+    <edge source="modules.kopf.Kopf" target="modules.viereck.Viereck">
+      <point x="0.0" y="-158.5" />
+      <point x="341.0" y="753.0" />
+      <point x="294.75" y="753.0" />
+      <point x="70.5" y="81.5" />
+    </edge>
+    <edge source="modules.schlange.Schlange" target="object">
+      <point x="0.0" y="-92.5" />
+      <point x="522.75" y="523.0" />
+      <point x="648.75" y="523.0" />
+      <point x="-28.5" y="246.5" />
+    </edge>
+    <edge source="modules.koerper.Koerper" target="object">
+      <point x="0.0" y="-81.5" />
+      <point x="1130.75" y="513.0" />
+      <point x="762.75" y="513.0" />
+      <point x="85.5" y="246.5" />
+    </edge>
+    <edge source="modules.fenster.Fenster" target="object">
+      <point x="0.0" y="-81.5" />
+      <point x="831.75" y="523.0" />
+      <point x="705.75" y="523.0" />
+      <point x="28.5" y="246.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3738317757009346" x="631.9999999999999" y="547.5" />
+  <SelectedNodes>
+    <node>modules.schlange.Schlange</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+
