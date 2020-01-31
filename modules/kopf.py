@@ -4,7 +4,10 @@ from . import viereck
 
 class Kopf(viereck.Viereck):
     def __init__(self, farbe):
-        super().__init__(260, 260, 20, farbe)
+        self.x = 260
+        self.y = 260
+        self.groesse = 20
+        self.farbe = farbe
 
         self.richtung = None
         self.verlauf_koordinaten = []
